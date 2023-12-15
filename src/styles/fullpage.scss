@@ -39,11 +39,16 @@ body, html {
     justify-content: space-evenly;
 }
 
+.main-img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 
 .container.inner.mid-top {
-    height: 10%;
-    display: flex;
-    justify-content: space-evenly;
+    height: 25%;
+
+
 }
 
 .custom-button {
@@ -56,11 +61,20 @@ body, html {
 
 
 .container.inner.mid-middle {
-    height: 70%
+    height: 70%;
+    display: flex;
+    justify-content: center;
+
 }
 
 .container.inner.mid-bottom {
-    height: 20%;
+    height: 5%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.breed-select {
+    width: 150px;
 }
 
 
