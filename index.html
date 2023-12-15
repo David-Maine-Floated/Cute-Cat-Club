@@ -6,14 +6,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./dist/main.css" />
+    <link rel="stylesheet" href="./dist/main.css"/>
     <script src="./dist/main.js"></script>
     <title>Project Name</title>
   </head>
-
+  
+  
   <body>
-    <h1>Cute Cat Club</h1>
-    <div id="main"></div>
+    <div class="head">
+        <div class='container container-head' id ='container-head'>
+          <h1>Cute Cat Club</h1>
+
+        </div>
+    </div>
+    
+    <div class='main-container'>
+      <div class="container left">
+        <h1>Left</h1>
+      </div>
+      <div class="container mid">
+        <div class="container inner mid-top">
+          <div class="custom-button">Populate Random Breed!</div>
+          <div>
+            <form action="" method="GET">
+              <input class='input' name='breed' type="text" value="">
+              <button class='search-breed'type="submit">Find Breed!</button>
+            </form>
+          </div>
+          <div class="custom-button">Find Breed!</div>
+        </div>
+        <div class="container inner mid-middle"><p>mid</p></div>
+        <div class="container inner mid-bottom"><p>bottom</p></div>
+      </div>
+      <div class="container right">
+        <h1>Right</h1>
+      </div>
+    </div>
+
+    <div class="bottom-container">
+      <h1>Bottom</h1>
+    </div>
   </body>
 
 </html>
