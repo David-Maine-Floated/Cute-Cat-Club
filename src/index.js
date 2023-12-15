@@ -1,12 +1,20 @@
-
+// import Chart from 'chart.js';
 
 document.addEventListener("DOMContentLoaded", () => {
+    
+
+
     const main = document.getElementById('main-container');
     const searchButton = document.querySelector('.search-breed');
     const searchBreedInput = document.querySelector('.input');
     const dropDownList = document.querySelector('.breed-select');
     const searchBreedButton = document.querySelector('.search-breed-button');
+
+
+
+    //data population
     const kittyImage = document.querySelector('.main-img');
+    const kittyName = document.querySelector('.kittyName');
 
 
 
@@ -57,8 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
    
     function populateData() {
-        console.log(currentKitty[0].image_link);
-        kittyImage.src = currentKitty[0].image_link;
+        let currentKittyData = currentKitty[0];
+        kittyImage.src = currentKittyData.image_link;
+        kittyName.innerHTML = currentKittyData.name;
     }
 
 
@@ -80,6 +89,57 @@ document.addEventListener("DOMContentLoaded", () => {
         dropDownList.appendChild(op);
 
     });
+
+
+    //js chart: 
+
+
+
+
+    // <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    //<script>
+    const ctx = document.getElementById('friendlinessChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['friendliness'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12],
+                borderWidth: 1,
+            }],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            },
+        },
+    });
+    // </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
