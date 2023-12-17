@@ -18,15 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const greetingSpace = document.querySelector('.greeting')
     const otherAnimalsQuestion = document.querySelector('.other-animals.question')
     const otherAnimalsMessage = document.querySelector('.other-animals.message')
-
-
-
-
-
+    
+    
+    
+    
+    
     const baseUrl = "https://api.api-ninjas.com//v1";
     const searchUrl = "https://api.api-ninjas.com//v1/cats?name=";
     const apiKey = "SDVdR263Cz4mXx1lVGlUoA==uu0Usi2FFLAG9yWf";
     
+    let colorScheme1 = ['rgba(6, 224, 176, 1)']
 
     let currentKitty;
     let friendliness = 0;
@@ -89,7 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
         greetingSpace.innerHTML = greeting;
 
         treatOtherAnimalsScore = currentKittyData.other_pets_friendly;
-        treatOtherAnimalsMessage = otherAnimals[treatOtherAnimalsScore - 1];
+        console.log(treatOtherAnimalsScore);
+        if(treatOtherAnimalsScore <= 4) {
+            treatOtherAnimalsMessage = otherAnimals[treatOtherAnimalsScore - 1];
+        } else {
+            treatOtherAnimalsMessage = generateOtherAnimalsLvl5RatingMessage();
+        };
+
         treatOtherAnimalQuestion = createOtherAnimalsQuestion();
         otherAnimalsQuestion.innerHTML = treatOtherAnimalQuestion;
         otherAnimalsMessage.innerHTML = treatOtherAnimalsMessage
@@ -118,9 +125,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const greetings = ['Now Presenting: ', 'Please Welcome: ', 'The Prestigious: ', "We can't believe our eyes! It's really: ", 'Nice to see you again: ', 'Most Excite to introduce: ', 'Such raw beauty, hello: ', 'The Elegant: ', 'Welcome back to the club: '];
 
 
-    const otherAnimals = ['"I will love and cuddle them foreverrrr."' ,'"I\'d really enjoy a sibling."',' "I could go either way if I\'m being honest."' , '"If they leave me and my food alone, i\'ll leave them and their food alone"', '"I will stalk them. I will wait till their alone. I will eat them."']
+    const otherAnimals = ['"I will love and cuddle them foreverrrr."' ,'"I\'d really enjoy a sibling."',' "I could go either way if I\'m being honest."' , '"If they leave me and my food alone, i\'ll leave them and their food alone"']
 
-    const otherAnimalsTitleEndings = ['! Do you dig other animals?', '! The fans want to know...do you like other animals?', '! How do you feel about other animal friends?', "! We're a little scare to ask but...do you allow other animals in your life?", '! The fans have to know! Are interetsed in other animals? Or are you a solo kind of cat?' ]
+
+    const otherAnimals5Rating = ['"I will destroy. I will consume. There will be nothing left."', '"I will wreak utter destruction on any fool who crosses my path."', '"I will stalk them. I will wait till their alone. I will eat them."', '"These Fangs, these claws...they are here for a reason. Bring me an animal and I will educate you.']
+
+    const otherAnimalsTitleEndings = ['! Do you dig other animals?', '! The fans want to know...do you like other animals?', '! How do you feel about other animal friends?', "! We're a little scared to ask but...do you allow other animals in your life?", '! The fans have to know! Are interetsed in other animals? Or are you a solo kind of cat?' ]
 
     const otherAnimalsTitleOpenings = ['Hey ', 'Hi ', 'Question for you ', 'If we could have your attention ', 'Well hello ', 'Hi there ', 'Howdy ', 'Bonjour ']
 
@@ -151,6 +161,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+    function generateOtherAnimalsLvl5RatingMessage() {
+        let length = otherAnimals5Rating.length - 1;
+        let i = Math.floor(Math.random() * length)
+        return otherAnimals5Rating[i]
+    }
+
+
     
     validBreeds.forEach(breed => {
         let op = document.createElement('option');
@@ -161,49 +178,52 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+
+  
  
 
 
+    function makeChart() {
 
+        let colorScheme = colorScheme1;
+    
+        const ctx = document.getElementById('firstChart');
+        let chartData = [friendliness, shedding, playfulness]
+        
+        Chart.defaults.font.size = 14;
+        Chart.defaults.font.family = 'Orbitron';
+        Chart.defaults.plugins.legend = false;
+        // Chart.defaults.plugins.legend.labels.textShadow = '-.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black';
+        // Chart.defaults.backgroundColor = '#9BD0F5';
+        // Chart.defaults.borderColor = '#36A2EB';
+        Chart.defaults.color = colorScheme[0];
+        
+        
 
-
-function makeChart() {
-    const ctx = document.getElementById('firstChart');
-    let chartData = [friendliness, shedding, playfulness]
-
-    Chart.defaults.font.size = 14;
-    Chart.defaults.font.family = 'Orbitron';
-    Chart.defaults.plugins.legend = false;
-
-    chart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['friendliness', 'shedding', 'playfulness'],
-            datasets: [{
-                label: 'kitty stats',
-                data: chartData,
-                borderWidth: 1,
-            }],
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true,  
+        chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['friendliness', 'shedding', 'playfulness'],
+                datasets: [{
+                    label: 'kitty stats',
+                    data: chartData,
+                    borderWidth: 1,
+                }],
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,  
+                    },
+                },
+                legend: {
+                    labels: {
+                        textShadow: '-.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black'
+                    },
                 },
             },
-            legend: {
-                labels: {
-                    // This more specific font property overrides the global property
-                    // font: {
-                    //     size: 20,
-                    //     family: "sans-serif"
-                    //  },
-                },
-            },
-        },
-    });
-    // chart.options.plugins.legend = false;
-}
+        });
+    }
 
   
 

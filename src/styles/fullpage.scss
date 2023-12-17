@@ -1,33 +1,81 @@
 
+$colorScheme1: rgba(207, 32, 156, 0.8), rgba(24, 126, 203, 0.8), rgba(225, 225, 225, .9);
+
+$backgroundImg1: url('https://www.creativefabrica.com/wp-content/uploads/2022/12/21/Yarn-ball-icon-Wool-red-thread-for-knit-Graphics-53716689-1-312x208.png');
+
+$borderColor: rgba(255, 25, 25, 0.9);
+
+
 
 body, html {
     margin: 0px;
-    height: 100%;
-    font-family: 'Orbitron', sans-serif;
+    height: 100vh;
 }
+.big {
+    font-family: 'Orbitron', sans-serif;
+    color: nth($colorScheme1, 2);
+    background-color: nth($colorScheme1, 3);
+    background-image: $backgroundImg1;
+    text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
+    min-height: 850px;
+    min-width: 1200px;
+    height: 100%;
+    margin: 0px;
+}
+.main-title {
+    font-family:  'Dancing Script', cursive;
+    font-weight: 800;
+    font-size:  35px;
+    border: none !important;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.main-p {
+    // padding-left: 200px;
+    // font-size: 16px;
+    text-align: center;
+}
+
+
 h2 {
     font-size: 20px;
 }
 
-.head {
-    height: 100px;
-    border: 5px solid red;
-    margin-bottom: 10px;
+h1 {
+    border: none;
 }
+
+.head {
+    height: 10%;
+    border: 5px solid $borderColor;
+    margin-bottom: 10px;
+    background-color: nth($colorScheme1, 3);
+    // background-color: rgba(255, 255, 255, 0.8);
+}
+
+.head:hover{ 
+    position: relative; 
+    top: 5px;
+} 
 
 .main-container {
     width: auto;
     height: 80%;
-    border: 5px solid blue;
-    box-sizing: border-box;
+    // border: 5px solid blue;
+    // box-sizing: border-box;
     display: flex;
     justify-content: space-evenly;
+    margin-top: 10px;
+    // background-image: $backgroundImg1;
 }
 
+
 .container {
-    border: 5px solid red;
+    border: 5px solid $borderColor;
     margin: 10px;
 }
+
 .container.right {
     width: 27%;
 }
@@ -37,10 +85,24 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    background-color: nth($colorScheme1, 3);
+    
 }
 
+.container.left:hover{ 
+    position: relative; 
+    right: 5px;
+    // top: 5px;
+} 
+
 .canva-container {
-    height: 50%
+    height: 30%;
+    background-color: rgba(223, 238, 234, 1);
+    // padding-bottom: 0px;
+}
+
+#firstChart {
+    margin-bottom: 0px;
 }
 
 .other-animals-container {
@@ -58,7 +120,24 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    background-color: nth($colorScheme1, 3);
+
 }
+
+.container.mid h1 {
+    font-weight: 900;
+}
+
+.greeting {
+    // color: rgba(6, 224, 176, 1);
+    // font-size: 25px;
+}
+
+.container.mid:hover{ 
+    position: relative; 
+    bottom: 5px;
+} 
+
 
 .other-animals {
     text-align: center;
@@ -85,7 +164,9 @@ h2 {
 .container.inner.mid-top h2 {
     text-align: center;
     margin-bottom: 5px;
-    font-size: 20px;
+
+    color: rgba(6, 224, 176, 1);
+    font-size: 25px;
 }
 
 .container.inner.mid-top h1 {
@@ -115,7 +196,21 @@ h2 {
     width: 150px;
 }
 
+.container.right {
+    background-color: nth($colorScheme1, 3);
+}
 
+.container.right:hover{ 
+    position: relative; 
+    left: 5px;
+} 
 
+.container-bottom {
+    background-color: nth($colorScheme1, 3) !important;
+}
 
+.canva-container h1 {
+    height: 10%;
+    margin-bottom: 0px;
+}
 

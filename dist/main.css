@@ -54,31 +54,64 @@ table {
   \*************************************************************************************************************************************/
 body, html {
   margin: 0px;
-  height: 100%;
+  height: 100vh;
+}
+
+.big {
   font-family: "Orbitron", sans-serif;
+  color: rgba(24, 126, 203, 0.8);
+  background-color: rgba(225, 225, 225, 0.9);
+  background-image: url("https://www.creativefabrica.com/wp-content/uploads/2022/12/21/Yarn-ball-icon-Wool-red-thread-for-knit-Graphics-53716689-1-312x208.png");
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+  min-height: 850px;
+  min-width: 1200px;
+  height: 100%;
+  margin: 0px;
+}
+
+.main-title {
+  font-family: "Dancing Script", cursive;
+  font-weight: 800;
+  font-size: 35px;
+  border: none !important;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.main-p {
+  text-align: center;
 }
 
 h2 {
   font-size: 20px;
 }
 
+h1 {
+  border: none;
+}
+
 .head {
-  height: 100px;
-  border: 5px solid red;
+  height: 10%;
+  border: 5px solid rgba(255, 25, 25, 0.9);
   margin-bottom: 10px;
+  background-color: rgba(225, 225, 225, 0.9);
+}
+
+.head:hover {
+  position: relative;
+  top: 5px;
 }
 
 .main-container {
   width: auto;
   height: 80%;
-  border: 5px solid blue;
-  box-sizing: border-box;
   display: flex;
   justify-content: space-evenly;
+  margin-top: 10px;
 }
 
 .container {
-  border: 5px solid red;
+  border: 5px solid rgba(255, 25, 25, 0.9);
   margin: 10px;
 }
 
@@ -92,10 +125,21 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  background-color: rgba(225, 225, 225, 0.9);
+}
+
+.container.left:hover {
+  position: relative;
+  right: 5px;
 }
 
 .canva-container {
-  height: 50%;
+  height: 30%;
+  background-color: rgb(223, 238, 234);
+}
+
+#firstChart {
+  margin-bottom: 0px;
 }
 
 .other-animals-container {
@@ -111,6 +155,16 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  background-color: rgba(225, 225, 225, 0.9);
+}
+
+.container.mid h1 {
+  font-weight: 900;
+}
+
+.container.mid:hover {
+  position: relative;
+  bottom: 5px;
 }
 
 .other-animals {
@@ -136,7 +190,8 @@ h2 {
 .container.inner.mid-top h2 {
   text-align: center;
   margin-bottom: 5px;
-  font-size: 20px;
+  color: rgb(6, 224, 176);
+  font-size: 25px;
 }
 
 .container.inner.mid-top h1 {
@@ -160,4 +215,22 @@ h2 {
 
 .breed-select {
   width: 150px;
+}
+
+.container.right {
+  background-color: rgba(225, 225, 225, 0.9);
+}
+
+.container.right:hover {
+  position: relative;
+  left: 5px;
+}
+
+.container-bottom {
+  background-color: rgba(225, 225, 225, 0.9) !important;
+}
+
+.canva-container h1 {
+  height: 10%;
+  margin-bottom: 0px;
 }
