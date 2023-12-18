@@ -62,7 +62,11 @@ div {
 }
 
 p:hover {
-  color: #000;
+  color: rgba(255, 0, 117, 0.84);
+}
+
+a:hover {
+  color: rgb(6, 224, 176);
 }
 
 h1:hover {

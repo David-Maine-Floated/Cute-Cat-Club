@@ -220,6 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
         Chart.defaults.font.family = 'Orbitron';
         Chart.defaults.plugins.legend = false;
         Chart.defaults.color = colorScheme[0];
+        Chart.defaults.hoverColor = 'black'
         
         
 
@@ -231,6 +232,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     label: 'kitty stats',
                     data: chartData,
                     borderWidth: 1,
+                    hoverBackgroundColor: 'rgba(112, 0, 255, 0.84)',
+                    hoverBorderColor: 'rgba(239, 255, 0, 0.96)',
+                    hoverBorderWidth : '2',
                 }],
             },
             options: {
@@ -242,6 +246,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     },
                     x: {
+                        ticks: {
+                        },
                         grid: {
                             display: false
                         }
@@ -279,7 +285,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     label: 'kitty stats',
                     data: chartData,
                     borderWidth: 1,
-                    backgroundColor: 'rgba(39, 236, 230, 0.65)'
+                    backgroundColor: 'rgba(39, 236, 230, 0.65)',
+                    hoverBackgroundColor: 'rgba(255, 48, 0, 0.84)',
+                    hoverBorderColor: 'rgba(117, 0, 255, 0.84)',
+                    hoverBorderWidth : '2'
                 }],
             },
             options: {
