@@ -15,9 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
     //data population
     const kittyImage = document.querySelector('.main-img');
     const kittyName = document.querySelector('.kittyName');
-    const greetingSpace = document.querySelector('.greeting')
-    const otherAnimalsQuestion = document.querySelector('.other-animals.question')
-    const otherAnimalsMessage = document.querySelector('.other-animals.message')
+    const greetingSpace = document.querySelector('.greeting');
+    const otherAnimalsQuestion = document.querySelector('.other-animals.question');
+    const otherAnimalsMessage = document.querySelector('.other-animals.message');
+    const mainTitle = document.querySelector('.main-title');
     
     
     
@@ -29,18 +30,31 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let colorScheme1 = ['rgba(6, 224, 176, 1)']
 
+
+    //kitty data points
+
     let currentKitty;
     let friendliness = 0;
     let shedding = 0;
     let playfulness= 0;
     let greeting;
     let chart;
-    if (!chart) {
-        makeChart();
-    }
+    // if (!chart) {
+    //     makeChart();
+    // }
     let treatOtherAnimalsMessage;
     let name;
     let treatOtherAnimalQuestion;
+    let maxWeight;
+    let minWeight;
+    let maxLifeExpec;
+    let minLifeExpec;
+    let chart2;
+    // if(!chart2) {
+    //     makeChart2()
+    // };
+
+
 
     const fetchKitty = async (e) => {
         e.preventDefault();
@@ -102,8 +116,19 @@ document.addEventListener("DOMContentLoaded", () => {
         otherAnimalsMessage.innerHTML = treatOtherAnimalsMessage
 
 
-        chart.destroy()
+        minWeight = currentKittyData.min_weight;
+        maxWeight = currentKittyData.max_weight;
+        minLifeExpec = currentKittyData.min_life_expectancy;
+        maxLifeExpec = currentKittyData.max_life_expectancy;
+
+        if (chart) {
+            chart.destroy()
+        }
         makeChart()
+        if (chart2) {
+            chart2.destroy()
+        }
+        makeChart2();
     }
 
 
@@ -115,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     
-    const validBreeds = ['Siamese cat', 'Maine Coon', 'British Shorthair', 'Ragdoll', 'American Shorthair', 'Abyssinian', 'Scottish Fold', 'Birman', 'Bombay', 'Siberian', 'Norwegian Forest', 'Russian Blue', 'American Curl', 'American Bobtail', 'Devon Rex', 'Balinese'];
+    const validBreeds = ['Siamese cat', 'Maine Coon', 'British Shorthair', 'Ragdoll', 'American Shorthair', 'Abyssinian', 'Scottish Fold', 'Birman', 'Bombay', 'Siberian', 'Norwegian Forest', 'Russian Blue', 'American Curl', 'American Bobtail', 'Devon Rex', 'Balinese', 'Havana Brown', 'Himalayan', 'Turkish Angora', 'Manx', 'Japanese Bobtail', 'Ragamuffin', 'American Wirehair', 'Cornish Rex', 'Egyptian Mau', 'Somali', 'Selkirk Rex', 'Singapura', 'Korat', 'Ocicat', 'Tonkinese', 'Turkish Van', 'LaPerm', 'Chausie', 'Burmilla', 'Lykoi'];
 
 
 
@@ -191,11 +216,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let chartData = [friendliness, shedding, playfulness]
         
         Chart.defaults.font.size = 14;
+        Chart.defaults.font_weight = 100;
         Chart.defaults.font.family = 'Orbitron';
         Chart.defaults.plugins.legend = false;
-        // Chart.defaults.plugins.legend.labels.textShadow = '-.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black';
-        // Chart.defaults.backgroundColor = '#9BD0F5';
-        // Chart.defaults.borderColor = '#36A2EB';
         Chart.defaults.color = colorScheme[0];
         
         
@@ -203,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
         chart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['friendliness', 'shedding', 'playfulness'],
+                labels: ['Friendliness', 'Shedding', 'Playfulness'],
                 datasets: [{
                     label: 'kitty stats',
                     data: chartData,
@@ -225,7 +248,45 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-  
+    
+    function makeChart2() {
+        console.log('hello')
+        let colorScheme = colorScheme1;
+    
+        const ctx = document.getElementById('secondChart');
+        let chartData = [minWeight, maxWeight, minLifeExpec, maxLifeExpec];
+        
+        Chart.defaults.font.size = 14;
+        Chart.defaults.font.family = 'Orbitron';
+        Chart.defaults.plugins.legend = false;
+        Chart.defaults.color = 'rgba(255, 36, 187, 1)';
+        
+        
+
+        chart2 = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Min Weight', 'Max Weight', 'Min Life Expectency', 'Max Life Expectency'],
+                datasets: [{
+                    label: 'kitty stats',
+                    data: chartData,
+                    borderWidth: 1,
+                }],
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,  
+                    },
+                },
+                legend: {
+                    labels: {
+                        textShadow: '-.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black'
+                    },
+                },
+            },
+        });
+    }
 
 
 
@@ -233,6 +294,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
+
+
+        
+
+
+
+    const fontColors = ["blue", "yellow", 'rgba(245, 40, 145, 0.8)', 'rgba(39, 236, 245, 1)', 'rgba(39, 138, 245, 1)', 'rgba(61, 39, 245, 1)', 'rgba(132, 255, 36, 1)', 'rgba(150, 36, 255, 1)', 'rgba(219, 36, 255, 1)', 'rgba(255, 36, 100, 1)', 'rgba(55, 36, 255, 1)', 'white', 'skyblue', 'rgba(255, 36, 36, 1)', 'rgba(255, 105, 36, 1)', 'rgba(36, 255, 228, 1)', 'rgba(255, 219, 36, 1)', 'rgba(214, 255, 36, 1)']
+
+
+
+
+
+
+
+    let currentColor = 0
+    function changeColor() {
+        console.log('hihi')
+        currentColor++;
+        if(currentColor >= fontColors.length) {
+            currentColor = 0
+        };
+
+        mainTitle.style.color = fontColors[currentColor]
+    
+    };
+
+    setInterval(changeColor, 500)
 
 
 
