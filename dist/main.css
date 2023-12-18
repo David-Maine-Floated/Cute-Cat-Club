@@ -57,6 +57,24 @@ body, html {
   height: 100vh;
 }
 
+div {
+  border-radius: 25px;
+}
+
+p:hover {
+  color: #000;
+}
+
+h1:hover {
+  color: rgba(154, 44, 255, 0.94);
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+
+h2:hover {
+  color: rgba(229, 255, 44, 0.94);
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+
 .big {
   font-family: "Orbitron", sans-serif;
   color: rgba(24, 126, 203, 0.8);
@@ -120,7 +138,8 @@ h1 {
   width: 27%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  padding-top: 32px;
 }
 
 .container.left {
@@ -197,6 +216,11 @@ h1 {
   font-size: 25px;
 }
 
+.container.inner.mid-top h2:hover {
+  color: rgb(255, 0, 218);
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+
 .container.inner.mid-top h1 {
   font-family: "Orbitron", sans-serif;
   font-size: 50px;
@@ -245,4 +269,17 @@ h1 {
 
 #second-chart {
   height: 250px;
+}
+
+.right-mid-div {
+  height: 25%;
+}
+
+.right-bottom-div {
+  height: 25%;
+}
+
+h2 .greeting:hover {
+  color: rgba(229, 255, 44, 0.94);
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
 }

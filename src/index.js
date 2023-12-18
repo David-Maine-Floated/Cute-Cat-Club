@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchUrl = "https://api.api-ninjas.com//v1/cats?name=";
     const apiKey = "SDVdR263Cz4mXx1lVGlUoA==uu0Usi2FFLAG9yWf";
     
-    let colorScheme1 = ['rgba(6, 224, 176, 1)']
+    let colorScheme1 = ['rgba(255, 0, 244, 1)']
 
 
     //kitty data points
@@ -237,7 +237,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 scales: {
                     y: {
                         beginAtZero: true,  
+                        grid: {
+                            display: false
+                        }
                     },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
                 },
                 legend: {
                     labels: {
@@ -271,13 +279,22 @@ document.addEventListener("DOMContentLoaded", () => {
                     label: 'kitty stats',
                     data: chartData,
                     borderWidth: 1,
+                    backgroundColor: 'rgba(39, 236, 230, 0.65)'
                 }],
             },
             options: {
                 scales: {
                     y: {
-                        beginAtZero: true,  
+                        beginAtZero: true, 
+                        grid: {
+                            display: false
+                        } 
                     },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
                 },
                 legend: {
                     labels: {
