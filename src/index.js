@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchBreedInput = document.querySelector('.input');
     const dropDownList = document.querySelector('.breed-select');
     const searchBreedButton = document.querySelector('.search-breed-button');
+    const optGroup = document.querySelector('.opt-group');
+
     
     
     
@@ -19,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const otherAnimalsQuestion = document.querySelector('.other-animals.question');
     const otherAnimalsMessage = document.querySelector('.other-animals.message');
     const mainTitle = document.querySelector('.main-title');
+    const childFriendlyQuestion = document.querySelector('.child-friendly-question');
+    const childFriendlyResponse = document.querySelector('.child-friendly-response');
     
     
     
@@ -50,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let maxLifeExpec;
     let minLifeExpec;
     let chart2;
+    let childrenFriendly;
     // if(!chart2) {
     //     makeChart2()
     // };
@@ -79,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if (response.ok) {
                 let resBody = await response.json();
                 currentKitty = resBody;
-                console.log(resBody);
 
             } else {
                 throw new Error(`API request failed with status ${response.status}: ${response.message}`);
@@ -104,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
         greetingSpace.innerHTML = greeting;
 
         treatOtherAnimalsScore = currentKittyData.other_pets_friendly;
-        console.log(treatOtherAnimalsScore);
         if(treatOtherAnimalsScore <= 4) {
             treatOtherAnimalsMessage = otherAnimals[treatOtherAnimalsScore - 1];
         } else {
@@ -120,6 +123,13 @@ document.addEventListener("DOMContentLoaded", () => {
         maxWeight = currentKittyData.max_weight;
         minLifeExpec = currentKittyData.min_life_expectancy;
         maxLifeExpec = currentKittyData.max_life_expectancy;
+        childrenFriendly = currentKittyData.children_friendly;
+        console.log(childrenFriendly)
+        childFriendlyQuestion.innerHTML = randomChildFriendlyQuestion();
+        console.log(childFriendlyResponses[childrenFriendly])
+        childFriendlyResponse.innerHTML = childFriendlyResponses[childrenFriendly - 1];
+
+
 
         if (chart) {
             chart.destroy()
@@ -159,6 +169,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const otherAnimalsTitleOpenings = ['Hey ', 'Hi ', 'Question for you ', 'If we could have your attention ', 'Well hello ', 'Hi there ', 'Howdy ', 'Bonjour ']
 
+
+    const childFriendlyQuestions = ['How do you like human children??' , 'How do you interact with human children?', 'Thoughts on human children?' , 'Can you be trusted around human children?']
+
+    const childFriendlyResponses = ['"Omg I love the lil cute thangs, I wanna purr all over them!"', '"I think they\'re fun! I\'ll be a good kitty to them!"', '"Ehhhh whatever i\'m not that interested, but I don\'t mind them either"', '"If they bother me I draw blood. If they don\'t...perhhaps I don\'t draw blood, perhaps I do..."', '"Utter terror awaits the human children that dare cross my path. They think i\'m so cute and fluffy and come try and rub their grubby little fingers on me. Let them. I\'m hungry."']
+
+
     function randomName() {
         let length = names.length - 1;
         let i = Math.floor(Math.random() * length)
@@ -192,13 +208,20 @@ document.addEventListener("DOMContentLoaded", () => {
         return otherAnimals5Rating[i]
     }
 
-
+    function randomChildFriendlyQuestion() {
+        let length = childFriendlyQuestions.length - 1;
+        let i = Math.floor(Math.random() * length)
+        return childFriendlyQuestions[i];
+    }
     
     validBreeds.forEach(breed => {
         let op = document.createElement('option');
         op.value = breed;
         op.innerHTML = breed;
+        op.style.fontFamily = 'Orbitron';
+        op.style.color = 'red';
         dropDownList.appendChild(op);
+        // optGroup.appendChild(op);
 
     });
 
@@ -264,7 +287,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     
     function makeChart2() {
-        console.log('hello')
+ 
         let colorScheme = colorScheme1;
     
         const ctx = document.getElementById('secondChart');
@@ -336,7 +359,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let currentColor = 0
     function changeColor() {
-        console.log('hihi')
         currentColor++;
         if(currentColor >= fontColors.length) {
             currentColor = 0

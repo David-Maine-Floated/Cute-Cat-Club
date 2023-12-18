@@ -86,7 +86,7 @@ h2:hover {
   background-image: url("https://www.creativefabrica.com/wp-content/uploads/2022/12/21/Yarn-ball-icon-Wool-red-thread-for-knit-Graphics-53716689-1-312x208.png");
   text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
   min-height: 850px;
-  min-width: 1200px;
+  min-width: 1400px;
   height: 100%;
   margin: 0px;
 }
@@ -170,6 +170,8 @@ h1 {
 
 .other-animals-container {
   height: 30%;
+  position: relative;
+  top: 50px;
 }
 
 .not-sure {
@@ -233,14 +235,15 @@ h1 {
 .container.inner.mid-middle {
   height: 70%;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   box-sizing: border-box;
+  font-size: 14px;
 }
 
 .container.inner.mid-bottom {
-  height: 5%;
+  height: 8%;
   display: flex;
-  justify-content: space-evenly;
   box-sizing: border-box;
 }
 
@@ -286,4 +289,79 @@ h1 {
 h2 .greeting:hover {
   color: rgba(229, 255, 44, 0.94);
   text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+
+option {
+  background-color: #f0f0f0;
+  color: red !important;
+}
+
+.search-breed-button {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 3px solid aqua;
+  width: 120px;
+}
+
+#find-breed {
+  padding-left: 10px;
+}
+
+.search-breed-button:hover {
+  background-color: skyblue;
+  position: relative;
+  left: 2px;
+  bottom: 2px;
+  cursor: pointer;
+}
+
+.search-breed-button:active {
+  position: relative;
+  left: 0px;
+  bottom: 0px;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  margin-left: 30%;
+  margin-right: 15px;
+  width: 180px;
+}
+
+select {
+  color: blue;
+  font-size: 14px;
+  font-family: "Orbitron", sans-serif;
+  box-shadow: 0, 10px, 25px, red;
+  width: 100% !important;
+  height: 40px;
+  border-radius: 25px;
+  border: 3px solid greenyellow;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+.david-maine:hover {
+  color: yellow;
+}
+
+.child-friendly-question {
+  text-align: center;
+}
+
+.child-friendly-question:hover {
+  color: rgba(0, 255, 154, 0.96);
+}
+
+.child-friendly-response {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.child-friendly-response:hover {
+  color: rgba(0, 255, 154, 0.96);
 }
