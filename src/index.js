@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
         chart2 = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Min Weight', 'Max Weight', 'Min Life Expectency', 'Max Life Expectency'],
+                labels: ['Min Weight: lbs', 'Max Weight: lbs', 'Min Life Expectency: yrs', 'Max Life Expectency: yrs'],
                 datasets: [{
                     label: 'kitty stats',
                     data: chartData,

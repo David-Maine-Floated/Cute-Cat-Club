@@ -42,7 +42,7 @@ h2:hover {
     background-image: $backgroundImg1;
     text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black;
     min-height: 850px;
-    min-width: 1400px;
+    min-width: 1150px;
     height: 100%;
     margin: 0px;
 }
@@ -57,8 +57,9 @@ h2:hover {
 
 .main-p {
     // padding-left: 200px;
-    // font-size: 16px;
+    font-size: 18px;
     text-align: center;
+    font-style: italic;
 }
 
 
@@ -74,7 +75,8 @@ h1 {
 .head {
     height: 10%;
     border: 5px solid $borderColor;
-    margin-bottom: 10px;
+    // margin-bottom: 10px;
+    margin-top: 10px;
     background-color: nth($colorScheme1, 3);
     // background-color: rgba(255, 255, 255, 0.8);
 }
@@ -91,7 +93,7 @@ h1 {
     // box-sizing: border-box;
     display: flex;
     justify-content: space-evenly;
-    margin-top: 10px;
+    margin-top: 5px;
     // background-image: $backgroundImg1;
 }
 
@@ -216,6 +218,7 @@ h1 {
     justify-content: center;
     box-sizing: border-box;
     font-size: 14px;
+    overflow: hidden;
 }
 
 .container.inner.mid-bottom {
@@ -357,17 +360,19 @@ select:hover {
 
 .bottom.right {
     display: flex;
+    align-items: center;
 
 }
 
 .theme-song {
-    margin-top: 20px;
+    // margin-top: 20px;
     text-align: center;
 }
 
 .theme-song:hover {
     color: rgba(0, 255, 154, 0.96);
 }
-// audio {
-    
-// }
+audio {
+    height: 75%;
+    margin-left: 5px;
+}

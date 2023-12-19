@@ -86,7 +86,7 @@ h2:hover {
   background-image: url("https://www.creativefabrica.com/wp-content/uploads/2022/12/21/Yarn-ball-icon-Wool-red-thread-for-knit-Graphics-53716689-1-312x208.png");
   text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
   min-height: 850px;
-  min-width: 1400px;
+  min-width: 1150px;
   height: 100%;
   margin: 0px;
 }
@@ -101,7 +101,9 @@ h2:hover {
 }
 
 .main-p {
+  font-size: 18px;
   text-align: center;
+  font-style: italic;
 }
 
 h2 {
@@ -116,7 +118,7 @@ h1 {
 .head {
   height: 10%;
   border: 5px solid rgba(255, 25, 25, 0.9);
-  margin-bottom: 10px;
+  margin-top: 10px;
   background-color: rgba(225, 225, 225, 0.9);
 }
 
@@ -130,7 +132,7 @@ h1 {
   height: 80%;
   display: flex;
   justify-content: space-evenly;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .container {
@@ -239,6 +241,7 @@ h1 {
   justify-content: center;
   box-sizing: border-box;
   font-size: 14px;
+  overflow: hidden;
 }
 
 .container.inner.mid-bottom {
@@ -373,13 +376,18 @@ select:hover {
 
 .bottom.right {
   display: flex;
+  align-items: center;
 }
 
 .theme-song {
-  margin-top: 20px;
   text-align: center;
 }
 
 .theme-song:hover {
   color: rgba(0, 255, 154, 0.96);
+}
+
+audio {
+  height: 75%;
+  margin-left: 5px;
 }
