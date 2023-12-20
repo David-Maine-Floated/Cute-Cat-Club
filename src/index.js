@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         populateData();
-    };
+    };$
 
    
     function populateData() {
@@ -365,12 +365,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const fontColors = ["blue", "yellow", 'rgba(245, 40, 145, 0.8)', 'rgba(39, 236, 245, 1)', 'rgba(39, 138, 245, 1)', 'rgba(61, 39, 245, 1)', 'rgba(132, 255, 36, 1)', 'rgba(150, 36, 255, 1)', 'rgba(219, 36, 255, 1)', 'rgba(255, 36, 100, 1)', 'rgba(55, 36, 255, 1)', 'white', 'skyblue', 'rgba(255, 36, 36, 1)', 'rgba(255, 105, 36, 1)', 'rgba(36, 255, 228, 1)', 'rgba(255, 219, 36, 1)', 'rgba(214, 255, 36, 1)']
-
-
-
-
-
-
 
     let currentColor = 0
     function changeColor() {
