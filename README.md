@@ -30,4 +30,4 @@
 
 ![Alt Text](/images/image-7.png)
 
-### I hope you have fun learning differnt facts about these cute cat breeds! And why yes, I did in fact make the theme song myself.
+### I hope you have fun learning different facts about these cute cat breeds! And why yes, I did in fact make the theme song myself.
