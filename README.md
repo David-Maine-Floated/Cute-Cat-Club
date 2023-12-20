@@ -117,4 +117,4 @@ function populateData() {
     setInterval(changeColor, 500)
 ```
 
-![Alt Text](./Homepage.png)
+## I hope you have fun learning differnt facts about these cute cat breeds! And why yes, I did in fact make the theme song myself.
