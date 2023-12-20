@@ -124,11 +124,16 @@ document.addEventListener("DOMContentLoaded", () => {
         minLifeExpec = currentKittyData.min_life_expectancy;
         maxLifeExpec = currentKittyData.max_life_expectancy;
         childrenFriendly = currentKittyData.children_friendly;
-        console.log(childrenFriendly)
         childFriendlyQuestion.innerHTML = randomChildFriendlyQuestion();
-        console.log(childFriendlyResponses[childrenFriendly])
-        childFriendlyResponse.innerHTML = childFriendlyResponses[childrenFriendly - 1];
 
+        if(childrenFriendly === 5) {
+            childFriendlyResponse.innerHTML =  generateChildrenFriendlyLvl5Response()
+        } else if (childrenFriendly === 4) {
+            childFriendlyResponse.innerHTML = generateChildrenFriendlyLvl4Response()
+        }
+         else {
+            childFriendlyResponse.innerHTML = childFriendlyResponses[childrenFriendly - 1];
+        }
 
 
         if (chart) {
@@ -150,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     
-    const validBreeds = ['Siamese cat', 'Maine Coon', 'British Shorthair', 'Ragdoll', 'American Shorthair', 'Abyssinian', 'Scottish Fold', 'Birman', 'Bombay', 'Siberian', 'Norwegian Forest', 'Russian Blue', 'American Curl', 'American Bobtail', 'Devon Rex', 'Balinese', 'Havana Brown', 'Himalayan', 'Turkish Angora', 'Manx', 'Japanese Bobtail', 'Ragamuffin', 'American Wirehair', 'Cornish Rex', 'Egyptian Mau', 'Somali', 'Selkirk Rex', 'Singapura', 'Korat', 'Ocicat', 'Tonkinese', 'Turkish Van', 'LaPerm', 'Chausie', 'Burmilla', 'Lykoi'];
+    const validBreeds = ['Siamese cat', 'Maine Coon', 'British Shorthair', 'Ragdoll', 'American Shorthair', 'Abyssinian', 'Scottish Fold', 'Birman', 'Bombay', 'Siberian', 'Norwegian Forest', 'Russian Blue', 'American Curl', 'American Bobtail', 'Devon Rex', 'Balinese', 'Havana Brown', 'Himalayan', 'Turkish Angora', 'Manx', 'Japanese Bobtail', 'Ragamuffin', 'American Wirehair', 'Cornish Rex', 'Egyptian Mau', 'Somali', 'Selkirk Rex', 'Singapura', 'Korat', 'Ocicat', 'Tonkinese', 'Turkish Van', 'LaPerm', 'Chausie', 'Burmilla', 'Lykoi', 'Khao Manee', 'Australian Mist', 'Snowshoe cat', 'Javanese cat', 'Colorpoint Shorthair', 'Sokoke', 'Toyger', 'Lykoi'];
 
 
 
@@ -172,8 +177,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const childFriendlyQuestions = ['How do you like human children??' , 'How do you interact with human children?', 'Thoughts on human children?' , 'Can you be trusted around human children?']
 
-    const childFriendlyResponses = ['"Omg I love the lil cute thangs, I wanna purr all over them!"', '"I think they\'re fun! I\'ll be a good kitty to them!"', '"Ehhhh whatever i\'m not that interested, but I don\'t mind them either"', '"If they bother me I draw blood. If they don\'t...perhhaps I don\'t draw blood, perhaps I do..."', '"Utter terror awaits the human children that dare cross my path. They think i\'m so cute and fluffy and come try and rub their grubby little fingers on me. Let them. I\'m hungry."']
+    const childFriendlyResponses = ['"Omg I love the lil cute thangs, I wanna purr all over them!"', '"I think they\'re fun! I\'ll be a good kitty to them!"', '"Ehhhh whatever i\'m not that interested, but I don\'t mind them either"']
 
+    const childFriendlyResponsesRating5 = ['"Utter terror awaits the human children that dare cross my path. They think i\'m so cute and fluffy and come try and rub their grubby little fingers on me. Let them. I\'m hungry."', '"Those disgusting little skin bags think they can come squeeze me whenever they please?! Does no one see my fangs and my claws?? I will teach them."', '"Those rancid little boogers are mere specs of dirt to me. I am the ruler of this universe, they are irrelevant and shall be punished for being so."']
+
+    const childFriendlyResponsesRating4 = ['"If they bother me I draw blood. If they don\'t...perhhaps I don\'t draw blood, perhaps I do..."', '"Those foul little things? I have no interest in them. They best leave me alone, if they don\'t...well you\'ve seen what I can do to a couch..."', 'Those squeeling little piglets don\'t deserve to be in my presence. Does my divinity mean nothing to them?? Perhaps my claws will remind them who is the god of their universe."', '"All I see is snot and messy diapers. And it makes me angry. And I enjoy being angry.']
 
     function randomName() {
         let length = names.length - 1;
@@ -208,6 +216,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return otherAnimals5Rating[i]
     }
 
+
+
+
     function randomChildFriendlyQuestion() {
         let length = childFriendlyQuestions.length - 1;
         let i = Math.floor(Math.random() * length)
@@ -226,7 +237,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+    function generateChildrenFriendlyLvl5Response() {
+        let length = childFriendlyResponsesRating5.length - 1;
+        let i = Math.floor(Math.random() * length)
+        return childFriendlyResponsesRating5[i]
+    }
 
+    function generateChildrenFriendlyLvl4Response() {
+        let length = childFriendlyResponsesRating4.length - 1;
+        let i = Math.floor(Math.random() * length)
+        return childFriendlyResponsesRating4[i]
+    }
   
  
 
