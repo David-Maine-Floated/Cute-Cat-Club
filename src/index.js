@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     
     
-    const baseUrl = "https://api.api-ninjas.com//v1";
+    const baseUrl = "https://api.api-ninjas.com/v1/cats?name=";
     const searchUrl = "https://api.api-ninjas.com//v1/cats?name=";
     const apiKey = "SDVdR263Cz4mXx1lVGlUoA==uu0Usi2FFLAG9yWf";
     
@@ -60,18 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // };
 
 
-
     const fetchKitty = async (e) => {
         e.preventDefault();
-
 
         let breed = dropDownList.value;
 
         try {
-            
-            const apiKey = "SDVdR263Cz4mXx1lVGlUoA==uu0Usi2FFLAG9yWf";
-            const baseUrl = "https://api.api-ninjas.com/v1/cats?name=";  
-   
             let response = await fetch(baseUrl + breed, 
                 { 
                     method: 'GET',
