@@ -155,11 +155,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     
-    const validBreeds = ['Siamese cat', 'Maine Coon', 'British Shorthair', 'Ragdoll', 'American Shorthair', 'Abyssinian', 'Scottish Fold', 'Birman', 'Bombay', 'Siberian', 'Norwegian Forest', 'Russian Blue', 'American Curl', 'American Bobtail', 'Devon Rex', 'Balinese', 'Havana Brown', 'Himalayan', 'Turkish Angora', 'Manx', 'Japanese Bobtail', 'Ragamuffin', 'American Wirehair', 'Cornish Rex', 'Egyptian Mau', 'Somali', 'Selkirk Rex', 'Singapura', 'Korat', 'Ocicat', 'Tonkinese', 'Turkish Van', 'LaPerm', 'Chausie', 'Burmilla', 'Lykoi', 'Khao Manee', 'Australian Mist', 'Snowshoe cat', 'Javanese cat', 'Colorpoint Shorthair', 'Sokoke', 'Toyger', 'Lykoi'];
+    const validBreeds = ['Siamese cat', 'Maine Coon', 'British Shorthair', 'Ragdoll', 'American Shorthair', 'Abyssinian', 'Scottish Fold', 'Birman', 'Bombay', 'Siberian', 'Norwegian Forest', 'Russian Blue', 'American Curl', 'American Bobtail', 'Devon Rex', 'Balinese', 'Havana Brown', 'Himalayan', 'Turkish Angora', 'Manx', 'Japanese Bobtail', 'Ragamuffin', 'American Wirehair', 'Cornish Rex', 'Egyptian Mau', 'Somali', 'Selkirk Rex', 'Singapura', 'Korat', 'Ocicat', 'Tonkinese', 'Turkish Van', 'LaPerm', 'Chausie', 'Burmilla', 'Lykoi', 'Khao Manee', 'Australian Mist', 'Snowshoe', 'Javanese', 'Colorpoint Shorthair', 'Sokoke', 'Toyger', 'Lykoi'];
 
 
 
-    const names = ['Muffins', 'Cersei', 'Lil Nuggets', 'Cowboy', 'Mr. Toe Beans', 'Rocky', 'Snowball', 'Bernard', 'Whiskey', 'Fritz', 'Emilia', 'Big Nuggets', 'Thedra', 'Judy', 'Clementine', 'Ruth', 'Hudson', 'Sir Licks A Lot', 'Mrs. Hangry', 'Jerry Poppins', 'Camilla', 'Obama', 'Hermoine', 'Cole', 'Dr DooGiggle', 'Santy Clawz', 'Jawz', 'Bilbo', 'Dracula', 'Tinkerbell', 'Fluff 2.0']
+    const names = ['Muffins', 'Cersei', 'Lil Nuggets', 'Cowboy', 'Mr. Toe Beans', 'Rocky', 'Snowball', 'Bernard', 'Whiskey', 'Fritz', 'Emilia', 'Big Nuggets', 'Thedra', 'Judy', 'Clementine', 'Ruth', 'Hudson', 'Sir Licks A Lot', 'Mrs. Hangry', 'Jerry Poppins', 'Camilla', 'Obama', 'Hermoine', 'Cole', 'Dr DooGiggle', 'Santy Clawz', 'Jawz', 'Bilbo', 'Dracula', 'Tinkerbell', 'Fluff 2.0', 'Sir Squeeks A Lot', 'Marko', 'Genghis Yawn', 'Strawberry', 'Tulip', 'McNuggets', 'Candy']
 
 
     const greetings = ['Now Presenting: ', 'Please Welcome: ', 'The Prestigious: ', "We can't believe our eyes! It's really: ", 'Nice to see you again: ', 'Most Excite to introduce: ', 'Such raw beauty, hello: ', 'The Elegant: ', 'Welcome back to the club: '];
